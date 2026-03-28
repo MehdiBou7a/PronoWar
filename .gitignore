@@ -1,0 +1,94 @@
+######################################
+# UNITY (OBLIGATOIRE)
+######################################
+
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+
+MemoryCaptures/
+Recordings/
+
+######################################
+# UNITY GENERATED FILES
+######################################
+
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+######################################
+# IDE / TOOLS
+######################################
+
+.vs/
+.gradle/
+.consulo/
+.idea/
+
+######################################
+# OS FILES
+######################################
+
+.DS_Store
+Thumbs.db
+
+######################################
+# BUILDS
+######################################
+
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.ipa
+
+######################################
+# LOGS
+######################################
+
+*.log
+
+######################################
+# FIREBASE (TRÈS IMPORTANT)
+######################################
+
+# Ignore TOUS les binaires natifs Firebase
+**/Assets/Firebase/Plugins/**/*.so
+**/Assets/Firebase/Plugins/**/*.bundle
+**/Assets/Firebase/Plugins/**/*.dll
+
+######################################
+# OPTIONNEL MAIS CONSEILLÉ
+######################################
+
+# Crash dumps
+sysinfo.txt
+
+# Temporary files
+*.bak
+*.swp
+*.orig
+
+######################################
+# FIREBASE CONFIG (TRÈS IMPORTANT)
+######################################
+
+**/google-services*.json
+**/GoogleService-Info.plist

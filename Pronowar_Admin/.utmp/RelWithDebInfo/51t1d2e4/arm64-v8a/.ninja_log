@@ -1,0 +1,12 @@
+# ninja log v5
+242	7791	7964244387693903	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	d55fcaf39c2dd7f8
+7816	10924	7964244415675481	C:/PronoWar/Dev_unity/PronoWar/Pronowar_Admin/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/51t1d2e4/obj/arm64-v8a/libswappywrapper.so	2ce70a739ec99273
+79	14672	7964244456993810	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	43167c6cfae3f0b2
+110	14856	7964244458956566	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	26946f0eae899309
+62	15047	7964244460838938	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	7172b790e905b370
+149	15127	7964244461635534	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	8e66ce1e3ffdf26
+7	15604	7964244466349169	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ca15b558bc678b55
+129	16689	7964244477264546	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	639962a98eb38902
+171	16889	7964244479450235	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	13bf527b1a0fa2e1
+42	17123	7964244481784877	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	595b6524b7fb652a
+17123	17340	7964244484098165	C:/PronoWar/Dev_unity/PronoWar/Pronowar_Admin/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/51t1d2e4/obj/arm64-v8a/libgame.so	2db321cdfd1129b4
