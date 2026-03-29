@@ -10,12 +10,21 @@ public class AdminUIController : MonoBehaviour
 
     public TMP_Text LoginMessageText;
 
+    private void Start()
+    {
+        ShowLogin();
+        ShowLoginMessage("");
+    }
+
     private void SetOnly(GameObject panel)
     {
-        LoginPanel.SetActive(panel == LoginPanel);
-        HomePanel.SetActive(panel == HomePanel);
-        MatchesPanel.SetActive(panel == MatchesPanel);
-        ScorePanel.SetActive(panel == ScorePanel);
+        if (LoginPanel != null) LoginPanel.SetActive(false);
+        if (HomePanel != null) HomePanel.SetActive(false);
+        if (MatchesPanel != null) MatchesPanel.SetActive(false);
+        if (ScorePanel != null) ScorePanel.SetActive(false);
+
+        if (panel != null)
+            panel.SetActive(true);
     }
 
     public void ShowLogin() => SetOnly(LoginPanel);
