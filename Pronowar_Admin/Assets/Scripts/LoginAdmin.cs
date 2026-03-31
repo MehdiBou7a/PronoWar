@@ -67,8 +67,12 @@ public class LoginAdmin : MonoBehaviour
 
         if (firebaseInitStarted)
         {
-            while (!firebaseReady && auth == null)
+            int timeout = 0;
+            while (!firebaseReady && auth == null && timeout < 200)
+            {
                 await Task.Delay(50);
+                timeout++;
+            }
 
             return firebaseReady && auth != null;
         }
@@ -133,6 +137,8 @@ public class LoginAdmin : MonoBehaviour
         {
             if (uiController != null)
                 uiController.ShowLoginMessage("Signing in...");
+
+            Debug.Log($"[DEBUG] ApiKey={FirebaseApp.DefaultInstance.Options.ApiKey} | AppId={FirebaseApp.DefaultInstance.Options.AppId}");
 
             var result = await auth.SignInWithEmailAndPasswordAsync(email, password);
 

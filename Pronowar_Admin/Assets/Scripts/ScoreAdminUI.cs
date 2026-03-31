@@ -41,8 +41,8 @@ public class ScoreAdminUI : MonoBehaviour
         if (saveScoreButton != null) saveScoreButton.onClick.AddListener(() => _ = SaveScoresAsync());
         if (closeJourneyButton != null) closeJourneyButton.onClick.AddListener(() => _ = CloseJourneyAsync());
 
-        if (backButton != null) backButton.onClick.AddListener(() => ui.ShowMatches());
-        if (cancelButton != null) cancelButton.onClick.AddListener(() => ui.ShowHome());
+        if (backButton != null) backButton.onClick.AddListener(() => { if (ui != null) ui.ShowMatches(); });
+        if (cancelButton != null) cancelButton.onClick.AddListener(() => { if (ui != null) ui.ShowHome(); });
     }
 
     private void OnEnable()

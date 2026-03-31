@@ -43,12 +43,11 @@ public class MatchesAdminUI : MonoBehaviour
         if (addMatchesButton != null) addMatchesButton.onClick.AddListener(() => _ = AddMatchesBulkAsync());
         if (deleteMatchesButton != null) deleteMatchesButton.onClick.AddListener(() => _ = DeleteMatchesFromInputAsync());
 
-        if (cancelButton != null) cancelButton.onClick.AddListener(() => ui.ShowHome());
+        if (cancelButton != null) cancelButton.onClick.AddListener(() => { if (ui != null) ui.ShowHome(); });
 
         if (setScoreButton != null) setScoreButton.onClick.AddListener(() =>
         {
-            // Next step: Score panel
-            ui.ShowScore();
+            if (ui != null) ui.ShowScore();
         });
     }
 
@@ -416,11 +415,27 @@ public class MatchesAdminUI : MonoBehaviour
             var line = line0.Trim();
             if (string.IsNullOrWhiteSpace(line)) continue;
 
-            line = line.Replace(" vs ", "-").Replace(" VS ", "-").Replace(" Vs ", "-");
-            line = line.Replace(";", "-");
+            // Try splitting by " - " (with spaces) first to handle team names with hyphens
+            string[] parts = null;
 
-            var parts = line.Split('-');
-            if (parts.Length < 2) continue;
+            if (line.Contains(" vs ") || line.Contains(" VS ") || line.Contains(" Vs "))
+            {
+                parts = Regex.Split(line, @"\s+[vV][sS]\s+");
+            }
+            else if (line.Contains(";"))
+            {
+                parts = line.Split(';');
+            }
+            else if (line.Contains(" - "))
+            {
+                parts = line.Split(new[] { " - " }, 2, StringSplitOptions.None);
+            }
+            else
+            {
+                parts = line.Split(new[] { '-' }, 2);
+            }
+
+            if (parts == null || parts.Length < 2) continue;
 
             string home = parts[0].Trim();
             string away = parts[1].Trim();

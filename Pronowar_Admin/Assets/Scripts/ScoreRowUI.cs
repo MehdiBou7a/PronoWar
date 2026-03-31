@@ -9,7 +9,7 @@ public class ScoreRowUI : MonoBehaviour
 
     [HideInInspector] public string matchId;
 
-    public void SetLabel(string label) => labelText.text = label;
+    public void SetLabel(string label) { if (labelText != null) labelText.text = label; }
 
     public bool TryGetScores(out int home, out int away)
     {
