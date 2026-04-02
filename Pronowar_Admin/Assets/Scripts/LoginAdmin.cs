@@ -138,8 +138,6 @@ public class LoginAdmin : MonoBehaviour
             if (uiController != null)
                 uiController.ShowLoginMessage("Signing in...");
 
-            Debug.Log($"[DEBUG] ApiKey={FirebaseApp.DefaultInstance.Options.ApiKey} | AppId={FirebaseApp.DefaultInstance.Options.AppId}");
-
             var result = await auth.SignInWithEmailAndPasswordAsync(email, password);
 
             if (result != null && result.User != null)
